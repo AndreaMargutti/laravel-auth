@@ -15,12 +15,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th></th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+        @foreach ($projects as $project )
+        <tr>
+            <th>{{$project->id}}</th>
+            <td>{{$project->name}}</td>
+            <td>{{$project->members}}</td>
+            <td>{{$project->description}}</td>
+        </tr>
+        @endforeach
     </tbody>
   </table>
 
