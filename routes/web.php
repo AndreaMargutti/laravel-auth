@@ -31,4 +31,5 @@ Route::middleware(['auth'])->name('admin.projects.')->prefix('admin/projects')->
     Route::get('/show/{project}', [ProjectController::class, 'show'])->name('show');
     Route::get('/edit/{project}', [ProjectController::class, 'edit'])->name('edit');
     Route::put('/show/{project}', [ProjectController::class, 'update'])->name('update');
+    Route::DELETE('/{project}', [ProjectController::class, 'destroy'])->name('delete');
 });
