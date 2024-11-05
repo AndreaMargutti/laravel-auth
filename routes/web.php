@@ -26,4 +26,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->name('admin.projects.')->prefix('admin/projects')->group(function() {
     Route::get('/index', [ProjectController::class, 'index'])->name('index');
+    Route::get('/show/{project}', [ProjectController:: class, 'show'])->name('show');
 });
