@@ -19,4 +19,23 @@ class ProjectController extends Controller
 
         return view('admin.projects.show', compact('project'));
     }
+
+    public function create () {
+        return view('admin.projects.create');
+    }
+
+    public function store (Request $request) {
+        //dd($request);
+
+        $data = $request;
+
+        $newProject = new Project();
+
+        $newProject->name = $data['name'];
+        $newProject->members = $data['members'];
+        $newProject->description = $data['description'];
+        $newProject->save();
+
+        return redirect()->route('admin.projects.show', $newProject->id);
+    }
 }

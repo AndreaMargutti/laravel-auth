@@ -5,6 +5,12 @@
 
 <h1 class="py-3">Sono l'indice</h1>
 
+<button class="btn btn-outline-primary btn-lg mb-3">
+    <a href="{{route('admin.projects.create')}}">
+        Create New Project
+    </a>
+</button>
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -27,7 +33,9 @@
             <td>{{$project->members}}</td>
             <td>{{$project->description}}</td>
             <td>
-                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary">
+                        Edit
+                </button>
                 <button class="btn btn-warning">Delete</button>
             </td>
         </tr>
