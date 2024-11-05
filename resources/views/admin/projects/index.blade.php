@@ -34,7 +34,9 @@
             <td>{{$project->description}}</td>
             <td>
                 <button class="btn btn-primary">
+                    <a href="{{route('admin.projects.edit', $project)}}">
                         Edit
+                    </a>
                 </button>
                 <button class="btn btn-warning">Delete</button>
             </td>

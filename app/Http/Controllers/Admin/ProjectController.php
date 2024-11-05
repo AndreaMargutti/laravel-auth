@@ -38,4 +38,20 @@ class ProjectController extends Controller
 
         return redirect()->route('admin.projects.show', $newProject->id);
     }
+
+    public function edit (Project $project) {
+
+        return view('admin.projects.edit', compact('project'));
+    }
+
+    public function update (Request $request, Project $project) {
+        $formData = $request->all();
+
+        $project->name = $formData['name'];
+        $project->members = $formData['members'];
+        $project->description = $formData['description'];
+        $project->update();
+
+        return redirect()->route('admin.projects.show', $project);
+    }
 }
